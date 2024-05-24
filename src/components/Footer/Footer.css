@@ -51,6 +51,13 @@
   gap: 50px;
   margin-bottom: 50px;
 }
+.footer-bottom-right a {
+  text-decoration: none;
+  color: white;
+}
+.footer-bottom-right a p:hover{
+  color: #df8908;
+}
 .footer-email-input:hover {
   border: 2px solid white;
 }

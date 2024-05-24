@@ -44,6 +44,10 @@
   background: linear-gradient(264deg, #df8908 -5.09%, #b415ff 100%);
   cursor: pointer;
 }
+.hero-connect a {
+  text-decoration: none;
+  color: white;
+}
 .hero-resume {
   padding: 25px 70px;
   border-radius: 50px;

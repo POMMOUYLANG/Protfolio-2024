@@ -1,9 +1,9 @@
-import project1_img from '../assets/foodshop.jpg'
-import project2_img from '../assets/coffee.jpg'
-import project3_img from '../assets/pos_login.jpg'
-import project4_img from '../assets/project_4.svg'
-import project5_img from '../assets/project_5.svg'
-import project6_img from '../assets/project_6.svg'
+import project1_img from '../assets/academic.png'
+import project2_img from '../assets/se_production.png'
+import project3_img from '../assets/foodshop.jpg'
+import project4_img from '../assets/coffee.jpg'
+import project5_img from '../assets/pos_login.jpg'
+import project6_img from '../assets/pos_second.jpg'
 
 const mywork_data = [
     {

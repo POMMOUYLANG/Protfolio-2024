@@ -20,13 +20,14 @@ const Hero = () => {
       </p>
       <div className="hero-action">
         <div className="hero-connect">
-          <AnchorLink
+          {/* <AnchorLink
             className="anchor-link"
             to="contact"
             smooth={true}
             duration={500}>
             My Postfolio For Me
-          </AnchorLink>
+          </AnchorLink> */}
+          <a href="" target="_blank" title="Portfolio">My Portfolio For Me</a>
         </div>
         <div className="hero-resume">My resume</div>
       </div>

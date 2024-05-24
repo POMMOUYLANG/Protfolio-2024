@@ -29,10 +29,16 @@ const Footer = () => {
           2024 POM MOUYLANG. All rights reserved
         </p>
         <div className="footer-bottom-right">
-          <a href="">
+          <a
+            href="https://www.facebook.com/mouy.laing.662033pom"
+            target="_blank"
+            title="Facebook">
             <p>Facebook</p>
           </a>
-          <a href="">
+          <a
+            href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox"
+            title="Email"
+            target="_blank">
             <p>Email</p>
           </a>
           <p>(+855) 69 310 609</p>
