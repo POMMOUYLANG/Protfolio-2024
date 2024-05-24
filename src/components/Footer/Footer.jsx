@@ -29,9 +29,13 @@ const Footer = () => {
           2024 POM MOUYLANG. All rights reserved
         </p>
         <div className="footer-bottom-right">
-          <p>Term of Project</p>
-          <p>Privacy Policy</p>
-          <p>Connect with me</p>
+          <a href="">
+            <p>Facebook</p>
+          </a>
+          <a href="">
+            <p>Email</p>
+          </a>
+          <p>(+855) 69 310 609</p>
         </div>
       </div>
     </div>

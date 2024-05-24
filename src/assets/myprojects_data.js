@@ -2,7 +2,7 @@ const MyProjects_Data = [
   {
     p_no: "01",
     p_name: "Payment Management",
-    p_desc: "Web development is the process of building, programming...",
+    p_desc: "Elevate university's payroll management with AcademicPAY...",
     p_url: "https://github.com/POMMOUYLANG/g7_AcademicPay",
   },
   {

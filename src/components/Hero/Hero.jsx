@@ -10,7 +10,8 @@ const Hero = () => {
         <img src={profile_img} alt="" />
       </div>
       <h1>
-        <span>I'm POM MOUYLANG,</span> <br />WEB Developer.
+        <span>I'm POM MOUYLANG,</span> <br />
+        WEB Developer.
       </h1>
       <p>
         I'm a student of Department of Information and Communication Engineering
@@ -24,7 +25,7 @@ const Hero = () => {
             to="contact"
             smooth={true}
             duration={500}>
-            Connect With Me
+            My Postfolio For Me
           </AnchorLink>
         </div>
         <div className="hero-resume">My resume</div>

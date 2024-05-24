@@ -24,7 +24,8 @@ const MyProject = () => {
                   href={myproject.p_url}
                   target="_blank"
                   rel="noopener noreferrer">
-                  Read More
+                  {/* <p>Read More</p> */}
+                  <p>GitHub More</p>
                 </a>
                 <img src={arrow_icon} alt="" />
               </div>

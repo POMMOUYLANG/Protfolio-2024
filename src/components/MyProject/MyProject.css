@@ -66,6 +66,9 @@
   text-decoration: none;
   color: #df8908;
 }
+.myproject-readmore a p:hover{
+  color: #df8908;
+}
 .myproject-format:hover {
   border: 2px solid #df8908;
   background-image: linear-gradient(45deg, #3f0028, #582300);
