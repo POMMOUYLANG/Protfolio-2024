@@ -4,109 +4,189 @@
   align-items: center;
   justify-content: center;
   gap: 80px;
-  margin: 80px 100px;
-}
-.myprojects-title {
+  margin: 100px 5%;
   position: relative;
 }
-.myprojects-title h1 {
-  padding: 0px 30px;
-  font-size: 80px;
-  font-weight: 600;
+
+.myprojects-title {
+  position: relative;
+  text-align: center;
 }
+
+.myprojects-title h1 {
+  font-size: 70px;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
 .myprojects-title img {
   position: absolute;
-  bottom: 0;
-  right: 0;
+  bottom: -15px;
+  right: -30px;
+  width: 150px;
   z-index: -1;
+  opacity: 0.7;
 }
+
+.myprojects-filter {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.myprojects-filter button {
+  padding: 10px 30px;
+  border-radius: 50px;
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-card);
+  color: var(--text-main);
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: var(--glass-blur);
+}
+
+.myprojects-filter button:hover {
+  border-color: rgba(180, 21, 255, 0.5);
+  box-shadow: 0 0 15px rgba(180, 21, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.myprojects-filter button.active {
+  background: var(--gradient-primary);
+  color: white;
+  border-color: transparent;
+  box-shadow: 0 5px 15px rgba(180, 21, 255, 0.4);
+}
+
+.myprojects-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  width: 100%;
+}
+
 .myproject-format {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   gap: 20px;
   padding: 40px;
-  border-radius: 10px;
-  border: 2px solid white;
-  transition: 0.4s;
-  cursor: pointer;
+  border-radius: 20px;
+  background: var(--bg-card);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--border-subtle);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
 }
-.myprojects-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 40px;
-  margin-bottom: 80px;
+
+.myproject-format::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(circle at top right, rgba(180, 21, 255, 0.1), transparent);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: -1;
 }
+
+.myproject-format:hover {
+  transform: translateY(-10px);
+  border-color: rgba(180, 21, 255, 0.5);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 20px rgba(180, 21, 255, 0.2);
+}
+
+.myproject-format:hover::before {
+  opacity: 1;
+}
+
 .myproject-format h3 {
-  font-size: 25px;
-  font-weight: 600;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-muted);
 }
+
 .myproject-format h2 {
-  font-size: 30px;
+  font-size: 32px;
   font-weight: 800;
-  background: linear-gradient(270deg, #df8908 50%, #b415ff 100%);
-  background-clip: text;
+  background: var(--gradient-primary);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
 .myproject-format p {
-  color: #d4d4d4;
-  font-size: 20px;
-  line-height: 40px;
-  max-width: 300px;
+  color: var(--text-main);
+  font-size: 18px;
+  line-height: 1.6;
 }
+
 .myproject-readmore {
   display: flex;
-  gap: 20px;
+  gap: 15px;
   align-items: center;
-  margin-top: 20px;
-  
+  margin-top: auto;
 }
-.myproject-readmore a{
+
+.myproject-readmore a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   text-decoration: none;
-  color: #df8908;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-main);
+  transition: color 0.3s;
 }
-.myproject-readmore a p:hover{
-  color: #df8908;
+
+.myproject-readmore a p {
+  margin: 0;
+  font-size: inherit;
+  color: inherit;
 }
-.myproject-format:hover {
-  border: 2px solid #df8908;
-  background-image: linear-gradient(45deg, #3f0028, #582300);
-  transform: scale(1.05);
-  transition: 0.3s;
+
+.myproject-readmore img {
+  filter: invert(1);
+  transition: transform 0.3s;
+}
+
+.myproject-readmore a:hover {
+  color: var(--accent-blue);
+}
+
+.myproject-readmore a:hover ~ img,
+.myproject-format:hover .myproject-readmore img {
+  transform: translateX(5px);
+  filter: drop-shadow(0 0 5px var(--accent-blue)) invert(1);
+}
+
+
+@media (max-width: 1024px) {
+  .myprojects-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 768px) {
   .myprojects {
-    align-items: start;
-    gap: 70px;
-    margin: 20px 70px;
+    gap: 60px;
+    margin: 60px 5%;
   }
   .myprojects-title h1 {
-    padding: 0;
-    font-size: 50px;
+    font-size: 45px;
   }
-  .myprojects-title img {
-    width: 130px;
-    margin-right: -20px;
+  .myprojects-container {
+    grid-template-columns: 1fr;
   }
   .myproject-format {
-    gap: 20px;
-    padding: 32px;
+    padding: 30px;
   }
   .myproject-format h2 {
     font-size: 28px;
-  }
-  .myproject-format p {
-    font-size: 18px;
-    line-height: 32px;
-    max-width: 300px;
-  }
-  .myproject-readmore img {
-    width: 20px;
-  }
-  .myprojects-container {
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
   }
 }

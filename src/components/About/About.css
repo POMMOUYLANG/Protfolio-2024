@@ -4,148 +4,224 @@
   align-items: center;
   justify-content: center;
   gap: 80px;
-  margin: 80px 100px;
-}
-.about-title {
+  margin: 100px 5%;
   position: relative;
 }
-.about-title h1 {
-  padding: 0px 30px;
-  font-size: 80px;
-  font-weight: 600;
+
+.about::after {
+  content: "";
+  position: absolute;
+  bottom: 10%;
+  right: -5%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(0, 212, 255, 0.1) 0%, transparent 60%);
+  z-index: -1;
+  filter: blur(40px);
 }
+
+.about-title {
+  position: relative;
+  text-align: center;
+}
+
+.about-title h1 {
+  font-size: 70px;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
 .about-title img {
   position: absolute;
-  bottom: 0;
-  right: 0;
+  bottom: -15px;
+  right: -30px;
+  width: 150px;
   z-index: -1;
+  opacity: 0.7;
 }
+
 .about-sections {
-  display: flex;
-  gap: 80px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 60px;
+  align-items: center;
+  width: 100%;
 }
+
+.about-left img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(180, 21, 255, 0.2);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.about-left img:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-neon);
+}
+
 .about-right {
   display: flex;
   flex-direction: column;
-  gap: 80px;
+  gap: 50px;
 }
-.about-left img {
-  /* font-size: 40px; */
-  height: 440px;
-}
+
 .about-para {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  font-size: 22px;
-  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.7;
+  color: var(--text-muted);
 }
+
+.about-para p {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  padding: 25px;
+  border-radius: 15px;
+  backdrop-filter: var(--glass-blur);
+  transition: all 0.3s;
+}
+
+.about-para p:hover {
+  border-color: rgba(0, 212, 255, 0.3);
+  transform: translateY(-2px);
+}
+
 .about-skills {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  margin-bottom: 40px;
+  gap: 30px;
 }
+
 .about-skill {
   display: flex;
-  gap: 50px;
+  gap: 30px;
   align-items: center;
-  transition: 0.3s;
+  transition: transform 0.3s ease;
 }
+
+.about-skill:hover {
+  transform: translateX(10px);
+}
+
 .about-skill p {
-  min-width: 150px;
-  font-size: 22px;
-  font-weight: 500;
+  min-width: 120px;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-main);
 }
+
+/* Progress bar container and fill */
+.about-skill > hr { /* Overrides the inline styling mostly, but uses it for width */
+  display: none; /* Hide default hr */
+}
+
+/* Using a trick: the parent JSX component needs a slight structural mod, but we can do it via CSS if we style the hr itself */
 .about-skill hr {
+  display: block;
   outline: none;
   border: none;
-  width: 50%;
-  height: 8px;
-  border-radius: 50px;
-  background: linear-gradient(264deg, #df8908 -5.09%, #b415ff 106.28%);
+  height: 10px;
+  border-radius: 20px;
+  background: var(--gradient-primary);
+  box-shadow: 0 0 10px rgba(180, 21, 255, 0.4);
+  position: relative;
+  overflow: hidden;
 }
+
+.about-skill hr::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  animation: shimmer 2s infinite;
+  transform: translateX(-100%);
+}
+
+@keyframes shimmer {
+  100% { transform: translateX(100%); }
+}
+
 .about-achievements {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
   width: 100%;
-  justify-content: space-around;
-  margin-bottom: 100px;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
+
 .about-achievement {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
-  transition: 0.5s;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 20px;
+  background: var(--bg-card);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--border-subtle);
+  border-radius: 20px;
+  transition: all 0.4s ease;
+  cursor: pointer;
 }
+
+.about-achievement:hover {
+  transform: translateY(-10px);
+  border-color: rgba(180, 21, 255, 0.5);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 212, 255, 0.2);
+}
+
 .about-achievement h1 {
-  font-size: 60px;
-  font-weight: 700;
-  background: linear-gradient(270deg, #df8908 50.41%, #b415ff 90.25%);
-  background-clip: text;
+  font-size: 55px;
+  font-weight: 800;
+  background: var(--gradient-primary);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  margin-bottom: 15px;
 }
+
 .about-achievement p {
-  font-size: 22px;
+  font-size: 16px;
   font-weight: 500;
+  color: var(--text-muted);
+  line-height: 1.4;
 }
-.about-skill:hover {
-  transform: scale(1.05);
-  transition: 0.3s;
+
+/* Hide original hr separators */
+.about-achievements > hr {
+  display: none;
 }
-.about-achievement:hover {
-  transform: scale(1.12);
-  transition: 0.3s;
+
+@media (max-width: 992px) {
+  .about-sections {
+    grid-template-columns: 1fr;
+  }
+  .about-left {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 @media (max-width: 768px) {
   .about {
-    gap: 80px;
-    margin: 50px 70px;
-    align-items: start;
+    margin: 60px 5%;
+    gap: 50px;
   }
   .about-title h1 {
-    font-size: 50px;
-    padding: 0;
-  }
-  .about-title img {
-    width: 130px;
-    right: -20px;
-  }
-  .about-sections {
-    flex-direction: column;
-  }
-  .about-left {
-    display: none;
-  }
-  .about-para {
-    font-size: 18px;
-    line-height: 32px;
-  }
-  .about-skill {
-    gap: 20px;
-    align-items: center;
-  }
-  .about-skill p {
-    font-size: 20px;
-  }
-  .about-skill hr {
-    height: 6px;
+    font-size: 45px;
   }
   .about-achievements {
-    justify-content: space-between;
+    grid-template-columns: 1fr;
   }
   .about-achievement {
-    gap: 10px;
+    padding: 30px 20px;
   }
-  .about-achievement h1{
-    font-size: 34px;
-    font-weight: 700;
-
-  }
-  .about-achievement p{
-    text-align: center;
+  .about-skill p {
+    min-width: 100px;
     font-size: 16px;
   }
 }

@@ -10,9 +10,9 @@ const Footer = () => {
         <div className="footer-top-left">
           <img src={footer_logo} alt="" />
           <p>
-            I am a web developer from, ITC with 4 years of Department of
-            Information and Communication Engineering from Institute technology
-            of cambodia.
+            I am a junior web developer from Phnom Penh, ITC with 5 years of
+            Department of Information and Communication Engineering from
+            Institute of Technology of Cambodia.
           </p>
         </div>
         <div className="footer-top-right">

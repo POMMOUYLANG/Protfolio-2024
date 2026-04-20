@@ -35,7 +35,7 @@ const Contact = () => {
             </div>
           </div>
         </div>
-        <from className="contact-right">
+        <form className="contact-right">
           <label htmlFor="">Your Name</label>
           <input type="text" placeholder="Enter your name" name="name" id="" />
           <label htmlFor="">Your Email</label>
@@ -54,7 +54,7 @@ const Contact = () => {
           <button type="submit" className="contact-submit">
             Submit Now
           </button>
-        </from>
+        </form>
       </div>
     </div>
   );

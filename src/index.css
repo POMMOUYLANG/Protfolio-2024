@@ -1,10 +1,66 @@
+:root {
+  --bg-main: #020202;
+  --bg-card: rgba(255, 255, 255, 0.03);
+  --border-glow: rgba(180, 21, 255, 0.3);
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --text-main: #ffffff;
+  --text-muted: #a1a1aa;
+  
+  /* Primary Gradients */
+  --accent-purple: #b415ff;
+  --accent-blue: #00d4ff;
+  --accent-orange: #df8908;
+  
+  --gradient-primary: linear-gradient(90deg, var(--accent-purple), var(--accent-blue));
+  --gradient-secondary: linear-gradient(270deg, var(--accent-orange), var(--accent-purple));
+  
+  --glass-bg: rgba(10, 10, 10, 0.5);
+  --glass-blur: blur(12px);
+  --shadow-neon: 0 0 20px rgba(180, 21, 255, 0.4);
+}
+
+[data-theme='light'] {
+  --bg-main: #fcfcfc;
+  --bg-card: rgba(0, 0, 0, 0.02);
+  --border-glow: rgba(180, 21, 255, 0.2);
+  --border-subtle: rgba(0, 0, 0, 0.08);
+  --text-main: #1a1a1a;
+  --text-muted: #666666;
+  
+  --glass-bg: rgba(255, 255, 255, 0.8);
+  --shadow-neon: 0 8px 30px rgba(180, 21, 255, 0.15);
+}
+
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  height: 100vh;
-  background-color: #161513;
-  color: white;
-  font-family: "outfit";
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  font-family: "Outfit", sans-serif;
+  overflow-x: hidden;
+  line-height: 1.6;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-main);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-subtle);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-purple);
 }

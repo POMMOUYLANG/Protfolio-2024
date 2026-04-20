@@ -1,162 +1,119 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { Link as AnchorLink } from "react-scroll";
 import "./Navbar.css";
 import logo from "../../assets/logo.png";
-import underline from "../../assets/nav_underline.svg";
 import menu_open from "../../assets/menu_open.svg";
 import menu_close from "../../assets/menu_close.svg";
 
 const Navbar = () => {
   const [menu, setMenu] = useState("home");
+  const [theme, setTheme] = useState(() => localStorage.getItem("theme") || "dark");
   const menuRef = useRef();
 
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === "light" ? "dark" : "light"));
+  };
+
   const openMenu = () => {
-    menuRef.current.style.right = "0";
+    menuRef.current.classList.add("open");
   };
   const closeMenu = () => {
-    menuRef.current.style.right = "-350px";
+    menuRef.current.classList.remove("open");
   };
 
   return (
     <div className="navbar">
-      <img src={logo} alt="" />
-      <img src={menu_open} onClick={openMenu} alt="" className="nav-mob-open" />
+      <img src={logo} alt="Logo" />
+      <img src={menu_open} onClick={openMenu} alt="Open Menu" className="nav-mob-open" />
       <ul ref={menuRef} className="nav-menu">
-        {/* <li>
-          <AnchorLink className="anchor-link" href="#home">
-            <p onClick={() => setMenu("home")}>Home</p>
-          </AnchorLink>
-          {menu === "home" ? <img src={underline} alt="" /> : <></>}
-        </li> */}
         <img
           src={menu_close}
           onClick={closeMenu}
-          alt=""
+          alt="Close Menu"
           className="nav-mob-close"
         />
-        <li>
+        <li className={menu === "home" ? "active" : ""}>
           <AnchorLink
             className="anchor-link"
             to="home"
             smooth={true}
-            duration={500}>
-            <p onClick={() => setMenu("home")}>Home</p>
+            offset={-100}
+            duration={500}
+            onClick={() => { setMenu("home"); closeMenu(); }}>
+            <p>Home</p>
           </AnchorLink>
-          {menu === "home" ? <img src={underline} alt="" /> : <></>}
         </li>
-        <li>
+        <li className={menu === "about" ? "active" : ""}>
           <AnchorLink
             className="anchor-link"
             to="about"
             smooth={true}
-            duration={500}>
-            <p onClick={() => setMenu("about")}>About Me</p>
+            offset={-50}
+            duration={500}
+            onClick={() => { setMenu("about"); closeMenu(); }}>
+            <p>About Me</p>
           </AnchorLink>
-          {menu === "about" ? <img src={underline} alt="" /> : <></>}
         </li>
-        <li>
+        <li className={menu === "project" ? "active" : ""}>
           <AnchorLink
             className="anchor-link"
             to="project"
             smooth={true}
-            duration={500}>
-            <p onClick={() => setMenu("project")}>Project</p>
+            offset={-50}
+            duration={500}
+            onClick={() => { setMenu("project"); closeMenu(); }}>
+            <p>Project</p>
           </AnchorLink>
-          {menu === "project" ? <img src={underline} alt="" /> : <></>}
         </li>
-        <li>
+        <li className={menu === "work" ? "active" : ""}>
           <AnchorLink
             className="anchor-link"
             to="work"
             smooth={true}
-            duration={500}>
-            <p onClick={() => setMenu("work")}>Portfolio</p>
+            offset={-50}
+            duration={500}
+            onClick={() => { setMenu("work"); closeMenu(); }}>
+            <p>Portfolio</p>
           </AnchorLink>
-          {menu === "work" ? <img src={underline} alt="" /> : <></>}
         </li>
-        <li>
+        <li className={menu === "contact" ? "active" : ""}>
           <AnchorLink
             className="anchor-link"
             to="contact"
             smooth={true}
-            duration={500}>
-            <p onClick={() => setMenu("contact")}>Contact</p>
+            offset={-50}
+            duration={500}
+            onClick={() => { setMenu("contact"); closeMenu(); }}>
+            <p>Contact</p>
           </AnchorLink>
-
-          {menu === "contact" ? <img src={underline} alt="" /> : <></>}
         </li>
       </ul>
-      <div className="nav-connect">
-        <AnchorLink
-          className="anchor-link"
-          to="contact"
-          smooth={true}
-          duration={500}>
-          Connect With Me
-        </AnchorLink>
+      <div className="nav-actions">
+        <button 
+          onClick={toggleTheme} 
+          className="theme-toggle"
+          title="Toggle Theme"
+        >
+          {theme === "light" ? "🌙" : "☀️"}
+        </button>
+        <div className="nav-connect">
+          <AnchorLink
+            className="anchor-link"
+            to="contact"
+            smooth={true}
+            offset={-50}
+            duration={500}>
+            Connect With Me
+          </AnchorLink>
+        </div>
       </div>
     </div>
   );
 };
 
 export default Navbar;
-
-// import React, { useState } from "react";
-// import { Link as RouterLink } from "react-router-dom";
-// import "./Navbar.css";
-// import logo from "../../assets/logo.png";
-// import underline from "../../assets/nav_underline.svg";
-
-// const Navbar = () => {
-//   const [menu, setMenu] = useState("home");
-
-//   return (
-//     <div className="navbar">
-//       <img src={logo} alt="" />
-//       <ul className="nav-menu">
-//         <li>
-//           {" "}
-//           <RouterLink className="anchor-link" to="#home">
-//             <p onClick={() => setMenu("home")}>Home</p>
-//           </RouterLink>
-//           {menu === "home" ? <img src={underline} alt="" /> : <></>}
-//         </li>
-//         <li>
-//           {" "}
-//           <RouterLink className="anchor-link" to="#about">
-//             <p onClick={() => setMenu("about")}>About Me</p>
-//           </RouterLink>
-//           {menu === "about" ? <img src={underline} alt="" /> : <></>}
-//         </li>
-//         <li>
-//           {" "}
-//           <RouterLink className="anchor-link" to="#project">
-//             <p onClick={() => setMenu("project")}>Project</p>
-//           </RouterLink>
-//           {menu === "project" ? <img src={underline} alt="" /> : <></>}
-//         </li>
-//         <li>
-//           {" "}
-//           <RouterLink className="anchor-link" to="#work">
-//             <p onClick={() => setMenu("work")}>Portfolio</p>
-//           </RouterLink>
-//           {menu === "work" ? <img src={underline} alt="" /> : <></>}
-//         </li>
-//         <li>
-//           {" "}
-//           <RouterLink className="anchor-link" to="#contact">
-//             <p onClick={() => setMenu("contact")}>Contact</p>
-//           </RouterLink>
-//           {menu === "contact" ? <img src={underline} alt="" /> : <></>}
-//         </li>
-//       </ul>
-//       <div className="nav-connect">
-//         <RouterLink className="anchor-link" to="#contact">
-//           Connect With Me
-//         </RouterLink>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Navbar;

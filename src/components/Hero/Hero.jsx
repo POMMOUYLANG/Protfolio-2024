@@ -2,6 +2,7 @@ import React from "react";
 import { Link as AnchorLink } from "react-scroll";
 import "./Hero.css";
 import profile_img from "../../assets/profile_img.png";
+import resumeUrl from "../../assets/myresume/resume.pdf";
 
 const Hero = () => {
   return (
@@ -11,12 +12,13 @@ const Hero = () => {
       </div>
       <h1>
         <span>I'm POM MOUYLANG,</span> <br />
-        WEB Developer.
+        Junior Web Developer
       </h1>
       <p>
-        I'm a student of Department of Information and Communication Engineering
-        from Institute technology of cambodia.I would like to ask you about
-        internship.
+        I am a graduate of the Department of Information and Communication
+        Engineering at the Institute of Technology of Cambodia. I am writing to
+        express my interest in joining your team and to inquire about available
+        job opportunities.
       </p>
       <div className="hero-action">
         <div className="hero-connect">
@@ -27,9 +29,13 @@ const Hero = () => {
             duration={500}>
             My Postfolio For Me
           </AnchorLink> */}
-          <a href="" target="_blank" title="Portfolio">My Portfolio For Me</a>
+          <a href="" target="_blank" title="Portfolio">
+            My Portfolio For Me
+          </a>
         </div>
-        <div className="hero-resume">My resume</div>
+        <a href={resumeUrl} download="Pom_Mouylang_Resume.pdf" className="hero-resume" target="_blank" rel="noopener noreferrer">
+          My resume
+        </a>
       </div>
     </div>
   );

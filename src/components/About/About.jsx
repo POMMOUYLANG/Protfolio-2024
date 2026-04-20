@@ -17,24 +17,29 @@ const About = () => {
         <div className="about-right">
           <div className="about-para">
             <p>
-              In my fourth year of computer science studies, I am a highly
-              driven and aspiring web developer looking for an internship
-              opportunity to utilize and further expand my abilities
+              I am a recent graduate from the Department of Information and
+              Communication Engineering at the Institute of Technology of
+              Cambodia. I am writing to express my strong interest in joining
+              your team and to inquire about available job opportunities.
             </p>
             <p>
-              in HTML, CSS, JavaScript, PHP, Vue.js, React.js. Dedicated to
-              making a difference in real-world projects as well as having
-              hands-on experience in web development.
+              I have developed a strong foundation in front-end technologies,
+              including HTML, CSS, JavaScript, and modern frameworks like
+              React.js and Vue.js. I am also proficient in back-end
+              development with Node.js and PHP/Laravel. I am passionate about
+              building efficient, scalable, and user-friendly web applications,
+              and I am eager to contribute my skills to real-world projects
+              while continuing to learn and grow as a developer.
             </p>
           </div>
           <div className="about-skills">
             <div className="about-skill">
               <p>HTML & CSS</p>
-              <hr style={{ width: "80%" }} />
+              <hr style={{ width: "100%" }} />
             </div>
             <div className="about-skill">
               <p>JavaScript</p>
-              <hr style={{ width: "60%" }} />
+              <hr style={{ width: "80%" }} />
             </div>
             <div className="about-skill">
               <p>React JS</p>
@@ -42,38 +47,17 @@ const About = () => {
             </div>
             <div className="about-skill">
               <p>Vue JS</p>
-              <hr style={{ width: "65%" }} />
+              <hr style={{ width: "80%" }} />
             </div>
             <div className="about-skill">
               <p>Node JS</p>
-              <hr style={{ width: "50%" }} />
+              <hr style={{ width: "80%" }} />
             </div>
             <div className="about-skill">
               <p>Laravel + PHP</p>
-              <hr style={{ width: "40%" }} />
+              <hr style={{ width: "90%" }} />
             </div>
           </div>
-        </div>
-      </div>
-      <div className="about-achievements">
-        <div className="about-achievement">
-          <h1>4+</h1>
-          <p>YEARS OF STUDY</p>
-        </div>
-        <hr />
-        <div className="about-achievement">
-          <h1>4+</h1>
-          <p>
-            PROJECTS OF COMPLETED <br />
-            <span>FROM INDIVIDUAL</span>
-          </p>
-        </div>
-        <hr />
-        <div className="about-achievement">
-          <h1>3+</h1>
-          <p>
-            PROJECTS OF COMPLETED <br /> <span>FROM GROUP</span>
-          </p>
         </div>
       </div>
     </div>
